@@ -26,8 +26,8 @@ public class Sailor {
     public void setSpeed(int speed) {
         if (speed < 0) {
             this.speed = 0;
-        } else if (speed > 6) {
-            this.speed = 6;
+        } else if (speed > 5) {
+            this.speed = 5;
         } else this.speed = speed;
     }
 
@@ -45,38 +45,4 @@ public class Sailor {
                 loadCapacity -= g[r].getWeightOfGood();
         }
     }
-
-
-    public void randomAdventure() {
-        Adventure[] city = new Adventure[5];
-        Random random = new Random();
-        int r = new Random().nextInt(5);
-        for (int i = 0; i < city.length; i++) {
-            int randomLigs = addRandomLigs();
-            switch (r) {
-                case 0:
-                    city[i] = new Moscow("Moscow", randomLigs);
-                    break;
-                case 1:
-                    city[i] = new Krasnogorsk("Krasnogorsk", randomLigs);
-                    break;
-                case 2:
-                    city[i] = new Bishkek("Bishkek", randomLigs);
-                    break;
-                case 3:
-                    city[i] = new Osh("Osh", randomLigs);
-                    break;
-                case 4:
-                    city[i] = new NewYork("NewYork", randomLigs);
-                    break;
-            }
-        }
-    }
-
-    public int addRandomLigs() {
-        Random random = new Random();
-        int randomLig = random.nextInt(50) + 51;
-        return randomLig;
-    }
-
 }

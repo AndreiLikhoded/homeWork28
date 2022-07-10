@@ -1,13 +1,15 @@
 package com.company.homework28;
 
-public  abstract class Adventure {
+import java.util.Random;
 
-    private String city;
-    private int randomLigs;
+public class Adventure {
 
-    public Adventure(String city, int randomLigs){
-        this.city = city;
-        this.randomLigs = randomLigs;
+
+
+    public int addRandomLigs() {
+        Random random = new Random();
+        int randomLigs = random.nextInt(50) + 51;
+        return randomLigs;
     }
 
 }

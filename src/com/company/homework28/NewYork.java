@@ -1,9 +1,14 @@
 package com.company.homework28;
 
-public class NewYork extends Adventure{
+public class NewYork extends Adventure implements MakeAdventure {
 
-    public NewYork(String city, int randomLigs){
-        super(city, randomLigs);
+    @Override
+    public void makeAdventures(Adventure adventure) {
+
     }
 
+    @Override
+    public int addRandomLigs() {
+        return super.addRandomLigs();
+    }
 }
