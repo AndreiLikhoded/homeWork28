@@ -12,9 +12,20 @@ public enum Goods {
     private final int weightOfGoods;
     private double price;
 
+    private Quality quality;
+
     Goods(int weight, double price){
         this.weightOfGoods = weight;
         this.price = price;
+        quality = Quality.A1;
+    }
+
+    public Quality getQuality() {
+        return quality;
+    }
+
+    public void setQuality(Quality quality) {
+        this.quality = quality;
     }
 
     public int getWeightOfGood(){

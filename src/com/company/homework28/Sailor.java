@@ -13,7 +13,7 @@ public class Sailor {
     private double sumOfMoney = 1000;
 
 
-    List<Goods> products;
+    public List<Goods> products;
 
     public Sailor() {
         products = new ArrayList<>();
@@ -24,11 +24,7 @@ public class Sailor {
     }
 
     public void setSpeed(int speed) {
-        if (speed < 0) {
-            this.speed = 0;
-        } else if (speed > 5) {
-            this.speed = 5;
-        } else this.speed = speed;
+        this.speed = speed;
     }
 
     public void randomLoad() {

@@ -1,33 +1,40 @@
 package com.company.homework28;
 
+import com.company.City;
 import com.company.events.*;
 
 import java.util.Random;
 
 public class Main {
 
+    private final static Random RANDOM = new Random();
+
     public static void main(String[] args){
 
         run();
     }
     public static void run(){
-        Adventure adventure = new Adventure();
-        adventure.addRandomLigs();
-        MakeAdventure[] makeAdventures = {
-                new NewYork(),
-                new Moscow(),
-                new Bishkek(),
-                new Krasnogorsk(),
-                new Texas()
-        };
-        Random random = new Random();
-        int ran = random.nextInt(4);
-        makeAdventures[ran] = makeAdventures(makeAdventures);
-        System.out.println(makeAdventures[ran]);
+        City city = City.values()[RANDOM.nextInt(City.values().length)];
+        System.out.println(city);
+        System.out.println(city.getDistance());
 
         Sailor sailor = new Sailor();
         sailor.randomLoad();
-        Event[] events = {
+        Event[] events = createEvents();
+        int day = 1;
+        while (city.getDistance() > 0){
+            System.out.println("DAY " + day);
+            System.out.println("" + city.getDistance());
+            Event event = events[RANDOM.nextInt(events.length)];
+            event.makeEvent(sailor);
+            city.setDistance(city.getDistance() - sailor.getSpeed());
+            day++;
+            sailor.setSpeed(3);
+        }
+    }
+
+    private static Event[] createEvents() {
+        return new Event[] {
                 new BreakWheel(),
                 new CommonDay(),
                 new GoodGotBad(),
@@ -38,13 +45,21 @@ public class Main {
                 new Robers(),
                 new RainDay()
         };
-        Random random1 = new Random();
-        int r = random.nextInt(8);
-        events[r].makeEvent(sailor);
-        System.out.println(events[r]);
     }
 
     private static MakeAdventure makeAdventures(MakeAdventure[] makeAdventures) {
         return makeAdventures[0];
+    }
+
+    public static Quality getNeedQ(Quality quality){
+        Quality[] values = Quality.values();
+        for (int i = 0; i < values.length; i++){
+            if(values[i] == quality && i < values.length - 1){
+                return values[i + 1];
+            }else {
+                return values[values.length - 1];
+            }
+        }
+        return null;
     }
 }
