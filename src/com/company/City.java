@@ -4,8 +4,10 @@ import java.util.Random;
 
 public enum City {
     NEW_YORK,
-    BISHKEK
-    ;
+    BISHKEK,
+    MOSCOW,
+    TEXAS,
+    KRASNOGORSK;
 
     private int distance;
 

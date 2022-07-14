@@ -17,7 +17,10 @@ public enum Goods {
     Goods(int weight, double price){
         this.weightOfGoods = weight;
         this.price = price;
-        quality = Quality.A1;
+        quality = Quality.NORMAL;
+    }
+
+    public static void add(Quality quality) {
     }
 
     public Quality getQuality() {

@@ -3,6 +3,7 @@ package com.company.homework28;
 import com.company.City;
 import com.company.events.*;
 
+import java.util.Queue;
 import java.util.Random;
 
 public class Main {
@@ -17,6 +18,7 @@ public class Main {
         City city = City.values()[RANDOM.nextInt(City.values().length)];
         System.out.println(city);
         System.out.println(city.getDistance());
+
 
         Sailor sailor = new Sailor();
         sailor.randomLoad();
@@ -45,10 +47,6 @@ public class Main {
                 new Robers(),
                 new RainDay()
         };
-    }
-
-    private static MakeAdventure makeAdventures(MakeAdventure[] makeAdventures) {
-        return makeAdventures[0];
     }
 
     public static Quality getNeedQ(Quality quality){

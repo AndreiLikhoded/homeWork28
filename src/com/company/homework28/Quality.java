@@ -1,11 +1,11 @@
 package com.company.homework28;
 
 public enum Quality {
-    A1(1.2),
-    A2(0.95),
-    A3(0.55),
-    A4(0.25),
-    A5(-0.1);
+    NORMAL(1.2),
+    SLIGHTLY_SPOILED(0.95),
+    HALF_OF_IT_HAS_GON_BAD(0.55),
+    ALMOST_ALL_GONE_BAD(0.25),
+    SPOILED_INTO_TRASH(-0.1);
 
     private final double q;
 
