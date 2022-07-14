@@ -1,6 +1,7 @@
 package com.company.events;
 
 import com.company.homework28.Goods;
+import com.company.homework28.Main;
 import com.company.homework28.Quality;
 import com.company.homework28.Sailor;
 
@@ -11,10 +12,12 @@ public class GoodGotBad implements Event{
     @Override
     public void makeEvent(Sailor sailor) {
         Goods goods = Goods.values()[RANDOM.nextInt(Goods.values().length)];
-
-
-
         Quality quality = Quality.values()[RANDOM.nextInt(Quality.values().length)];
+        goods.setQuality(Main.getNeedQ(goods.getQuality()));
+        System.out.println("You got spoiled " + goods);
+
+
+
 
 
     }

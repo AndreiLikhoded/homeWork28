@@ -10,7 +10,7 @@ public class RainDay implements Event {
         sailor.setSpeed(sailor.getSpeed() - 2);
         Goods goods = sailor.products.get(0);
         goods.setQuality(Main.getNeedQ(goods.getQuality()));
-        //30%
+        System.out.println("river " + goods);
     }
 
 }
